@@ -31,8 +31,8 @@ My background means I don't just build models — I understand the business ques
 data-science-portfolio/
 ├── pandas/          # 10-Day Pandas Bootcamp ✅
 ├── numpy/           # 5-Day NumPy Bootcamp ✅
-├── scipy/           # 14-Day SciPy Statistics Bootcamp (Week 1 complete ✅)
-└── scikit-learn/    # 30-Day scikit-learn Bootcamp (starting soon)
+├── scipy/           # 14-Day SciPy Statistics Bootcamp ✅
+└── scikit-learn/    # 30-Day scikit-learn Bootcamp 🔄 In Progress
 ```
 
 ---
@@ -104,14 +104,14 @@ NumPy foundations through to the scikit-learn bridge, covering the mathematical 
 
 ---
 
-### 📈 SciPy — 14-Day Statistics Bootcamp
+### 📈 SciPy — 14-Day Statistics Bootcamp ✅ Complete
 **`scipy/`**
 
 Applied statistics with a focus on real business problems in digital health and media. All examples use publicly available datasets or fully synthetic data designed to reflect realistic industry scenarios. No employer data of any kind was used — see disclaimer at the top of this page.
 
 ---
 
-#### ✅ Week 1 — Theory & Application (Complete)
+#### Week 1 — Theory & Application ✅
 
 **Day 1 — Probability Distributions**
 `SciPy_W1_D1_Probability_Foundations_and_Distributions.ipynb`
@@ -296,7 +296,7 @@ Split across three notebooks progressing from one-way ANOVA to repeated measures
 
 ---
 
-#### Week 2 — Practice on Real Data *(starting next)*
+#### Week 2 — Practice on Real Data ✅
 
 | Day | Topic | Dataset |
 |-----|-------|---------|
@@ -310,7 +310,24 @@ Split across three notebooks progressing from one-way ANOVA to repeated measures
 
 ---
 
-### 🤖 scikit-learn — 30-Day Bootcamp *(starting after SciPy Week 2)*
+**Day 7 — Monte Carlo Capstone ⭐**
+`SciPy_W2_D7_Monte_Carlo_Capstone.ipynb`
+
+End-to-end simulation project integrating power analysis, revenue modelling, permutation testing, sensitivity analysis, and a reusable campaign evaluation function — applied to synthetic digital health and media subscription scenarios.
+
+| Question | Scenario | Key Concepts |
+|----------|----------|-------------|
+| Q1 | A/B test power via Monte Carlo | 2D binomial matrix simulation across 6 sample sizes · empirical vs theoretical power curves · 80%/90% thresholds · MDE sensitivity comparison (1.0pp vs 0.5pp) |
+| Q2 | Revenue simulation with uncertainty | Stochastic 12-month subscriber compounding · fan chart (100 random paths + median) · 5th–95th percentile bands · P(>200k) probability horizon analysis |
+| Q3 | Permutation test vs parametric | Welch's t-test · Mann-Whitney U · 10,000-permutation null distribution · two-tailed empirical p-value · test trust hierarchy for skewed data |
+| Q4 | Sensitivity (tornado) analysis | ±20% one-at-a-time input variation · revenue swing per driver · horizontal tornado chart · business leverage ranking |
+| Q5 ⭐ | Campaign simulator function | Fully documented `simulate_campaign()` — lift sampling distribution · power curve annotation · revenue impact distribution · P(profitable) · break-even rate · dual scenario test (health booking + subscription) |
+
+**Skills demonstrated:** `np.random.binomial` (2D matrix) · `NormalIndPower` · `proportion_effectsize` · fan chart · tornado chart · vectorised permutation test · `scipy.stats` · `statsmodels` · production docstrings · multi-panel dashboard layout
+
+---
+
+### 🤖 scikit-learn — 30-Day Bootcamp 🔄 In Progress
 **`scikit-learn/`**
 
 | Week | Focus |
@@ -357,4 +374,4 @@ If you are working on interesting problems in health, media, or consumer technol
 
 ---
 
-*Last updated: April 2026 | SciPy Week 1 complete — starting Week 2 practice notebooks*
+*Last updated: June 2026 | SciPy bootcamp complete ✅ — scikit-learn 30-day bootcamp in progress 🔄*
