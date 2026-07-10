@@ -32,310 +32,75 @@ data-science-portfolio/
 ├── pandas/          # 10-Day Pandas Bootcamp ✅
 ├── numpy/           # 5-Day NumPy Bootcamp ✅
 ├── scipy/           # 14-Day SciPy Statistics Bootcamp ✅
-└── scikit-learn/    # 30-Day scikit-learn Bootcamp 🔄 In Progress
+└── scikit-learn/    # 30-Day scikit-learn Bootcamp 🔄 W1 Complete (14/30)
 ```
 
 ---
 
 ## 🏥 Featured Project — Digital Health Patient Conversion Model
 
-**`scipy/SciPy_W1_D5_Correlation_and_Regression.ipynb`** (Q6 Portfolio Extension)
+> *Can we predict whether a user will convert to a diagnosis-seeking (DX) or prescription-seeking (RX) action based on their content consumption behaviour?*
 
-> *In digital health platforms, can we predict whether a user will convert to a diagnosis-seeking (DX) or prescription-seeking (RX) action based on their content consumption behaviour?*
+First built in the SciPy bootcamp using `statsmodels` logistic regression, then extended across the scikit-learn arc:
 
-This is a **fully synthetic, independently designed project** built to explore a common and well-documented business problem in the digital health industry. All data was simulated from scratch using publicly known statistical properties of health content platforms — no proprietary or employer data of any kind was used.
+- **D15** — Rebuilt with sklearn Pipeline, calibrated probabilities, revenue threshold curve
+- **D29** — Upgraded to XGBoost + SHAP, head-to-head vs baseline, optimal outreach threshold
+- **D30** — Capstone: joint MedPulse × HealthLine engagement predictor, full production pipeline
 
-**What I built:**
-- Designed and simulated a realistic 2,000-user session dataset from first principles using domain-informed distributions (Poisson, Beta, Log-normal, Binomial) based on publicly available research on health content engagement
-- Engineered features including content type mix, session depth, device type, return visitor status, and time-on-page
-- Built a logistic regression model using `statsmodels` with full odds ratio interpretation
-- Evaluated model performance using confusion matrix, precision/recall, F1-score, and AUC-ROC
-
-**Key findings:** Drug information article consumption (OR = 10.1) and symptom article consumption (OR = 5.0) are the strongest predictors of conversion — consistent with published research on health information-seeking behaviour.
-
-**Coming in scikit-learn Days 22–24:**
-- Proper train/test split and k-fold cross-validation
-- Full AUC-ROC and precision-recall curves
-- Comparison against Random Forest and XGBoost
-- Hyperparameter tuning with GridSearchCV
-
-**Skills demonstrated:** `scipy.stats` · `statsmodels` · `numpy` · `pandas` · logistic regression · odds ratios · synthetic data simulation · domain-driven feature engineering
+All data is fully synthetic. See disclaimer above.
 
 ---
 
 ## 📚 Completed Bootcamps
 
 ### 🐼 Pandas — 10-Day Bootcamp ✅
-**`pandas/`**
-
-End-to-end pandas mastery using real-world public datasets (Titanic, restaurant tips, SF salaries, country demographics).
-
-| Day | Topic | Dataset |
-|-----|-------|---------|
-| 1 | Loading, inspecting, filtering | Titanic |
-| 2 | Data cleaning, new columns, np.select() | Restaurant tips |
-| 3 | Sorting, ranking, nlargest | Country demographics |
-| 4 | GroupBy, aggregation, HAVING equivalent, transform() | SF Salaries |
-| 5 | Joins, merges, UNION ALL | Titanic + class lookup |
-| 6 | Reshaping, pivot_table, melt, crosstab | Demographics |
-| 7 | Multi-table joins, pivot, string ops | Restaurant + time lookup |
-| 8 | Window functions, cumsum, shift, rank, YoY growth | SF Salaries |
-| 9 | Datetime parsing, dt accessor, time series, messy dates | Campaign data |
-| 10 | Capstone — full pipeline, method chaining, export | All datasets |
-
-**Skills demonstrated:** `pd.merge` · `groupby` · `pivot_table` · `melt` · `transform` · `shift` · `cumsum` · `pd.cut` · method chaining · `.assign()` · `.pipe()`
+Data wrangling mastery: groupby, pivot_table, window functions, joins, reshaping, method chaining. Applied to Titanic, SF Salaries, restaurant tips, and country demographics datasets.
 
 ---
 
 ### 🔢 NumPy — 5-Day Bootcamp ✅
-**`numpy/`**
+Array operations, broadcasting, linear algebra, and the NumPy ↔ pandas ↔ scikit-learn data pipeline. Foundation for the ML work that followed.
 
-NumPy foundations through to the scikit-learn bridge, covering the mathematical layer beneath pandas.
+---
+
+### 📈 SciPy — 14-Day Statistics Bootcamp ✅
+Applied statistics for digital health and media business problems.
+
+**Week 1 — Theory:** probability distributions · CLT & confidence intervals · A/B testing & hypothesis testing (5-part series) · ANOVA/ANCOVA · regression · time series · Monte Carlo simulation
+
+**Week 2 — Practice on real data:** Heart Disease UCI · News Category · A/B Testing · Student Performance · Web Traffic datasets + Monte Carlo capstone ⭐
+
+**Skills:** `scipy.stats` · `statsmodels` · `pingouin` · bootstrapping · permutation tests · FDR correction · SHAP-free feature analysis · simulation
+
+---
+
+### 🤖 scikit-learn — 30-Day Bootcamp 🔄 W1 Complete
+Applied ML using synthetic **MedPulse** (digital health) and **HealthLine** (media subscriptions) datasets throughout.
+
+**Week 1 — Core Algorithms ✅ (Days 1–14)**
 
 | Day | Topic |
 |-----|-------|
-| 1 | Array creation, attributes, indexing, boolean masking |
-| 2 | Reshaping, stacking, copy vs view |
-| 3 | Math, aggregations, broadcasting, np.where() |
-| 4 | Linear algebra, np.linalg, random numbers, reproducibility |
-| 5 | NumPy ↔ pandas bridge, X/y pattern, StandardScaler manual, np.isnan() |
+| 1 | sklearn API & ML workflow — Pipeline, leakage detection, CV |
+| 2 | Linear & Logistic Regression — Ridge, Lasso, odds ratios |
+| 3 | Classification Metrics — confusion matrix, ROC, PR curve, threshold tuning |
+| 4 | Cross-Validation & Regression Metrics — KFold, StratifiedKFold, RMSE/MAE/R² |
+| 5 | Decision Trees — tree structure, depth sweep, Gini vs permutation importance |
+| 6 | Random Forests — OOB score, stability analysis, feature elimination |
+| 7 | SVMs & KNN — kernel functions, C sweep, k sweep, log-transform fix |
+| 8 | Gradient Boosting — loss curves, staged predictions, lr × n_estimators interaction |
+| 9 | XGBoost, LightGBM & SHAP — early stopping, SHAP waterfall/beeswarm, Shapley properties |
+| 10 | Preprocessing & Feature Engineering — scaling, encoding, imputation, cyclical features |
+| 11 | Pipelines — ColumnTransformer, leakage proof, joblib persistence |
+| 12 | Hyperparameter Tuning — GridSearch, RandomizedSearch, validation curves, heatmap |
+| 13 | Imbalanced Classes — SMOTE, class_weight, threshold tuning, clinical scenario framing |
+| 14 | Model Selection & Bias-Variance — polynomial demo, learning curves, 5-model comparison |
 
-**Skills demonstrated:** broadcasting · vectorized operations · `np.dot` · `np.linalg` · `np.random` · array manipulation · scikit-learn data preparation
+**Skills:** `Pipeline` · `ColumnTransformer` · `GridSearchCV` · `XGBClassifier` · `LGBMClassifier` · SHAP · SMOTE · `cross_validate` · `learning_curve` · `validation_curve` · `joblib`
 
----
+**Week 2 — Applied Projects 🔄 Coming Next (Days 15–30)**
 
-### 📈 SciPy — 14-Day Statistics Bootcamp ✅ Complete
-**`scipy/`**
-
-Applied statistics with a focus on real business problems in digital health and media. All examples use publicly available datasets or fully synthetic data designed to reflect realistic industry scenarios. No employer data of any kind was used — see disclaimer at the top of this page.
-
----
-
-#### Week 1 — Theory & Application ✅
-
-**Day 1 — Probability Distributions**
-`SciPy_W1_D1_Probability_Foundations_and_Distributions.ipynb`
-
-| Topic | Key Functions |
-|-------|--------------|
-| Normal distribution — CLT foundation | `stats.norm` |
-| Binomial — conversion rate modelling | `stats.binom` |
-| Poisson — event rate modelling | `stats.poisson` |
-| Beta — Bayesian priors for proportions | `stats.beta` |
-| Log-normal — session duration, revenue | `stats.lognorm` |
-
-**Skills demonstrated:** `scipy.stats` · PDF/CDF/PPF · distribution fitting · visualization of distribution shape
-
----
-
-**Day 2 — Sampling, CLT & Confidence Intervals**
-`SciPy_W1_D2_Sampling_CLT_and_Confidence_Intervals.ipynb`
-
-| Topic | Key Concepts |
-|-------|-------------|
-| Sampling distributions | Why sample means follow Normal regardless of raw data |
-| Central Limit Theorem simulation | Visualising convergence with increasing n |
-| Confidence intervals | `proportion_confint` · `norm.interval` |
-| Bootstrapping | Non-parametric CI estimation via resampling |
-
-**Skills demonstrated:** `scipy.stats` · `statsmodels` · bootstrapping · CI construction · sampling simulation
-
----
-
-**Day 3 — Hypothesis Testing, A/B Testing & Statistical Tests**
-
-Split across five notebooks covering the full spectrum of hypothesis testing from binary proportions to non-parametric methods and advanced pitfalls.
-
-*Day 3A — Two-Proportion Test & p-value Foundations*
-`SciPy_W1_D3A_Foundations_and_The_Two-Proportion_Test.ipynb`
-
-| Question | Topic |
-|----------|-------|
-| Q1 | Full two-proportion z-test pipeline — conversion rates, 95% CI error bars, z-stat, p-value, lift |
-| Q2 | Cohen's h effect size — classification, dot plot, statistical vs practical significance |
-| Q3 | p-value deep dive — 2,000-trial simulation under H0 and H1, power overlay, false positive rate |
-| Q4 | Absolute vs relative lift — grouped bar chart, stakeholder communication |
-| Q5 | Revenue impact & sensitivity analysis — monthly/annual projections, $1M threshold, lift × price heatmap |
-
-*Day 3B — Continuous Metrics & t-tests*
-`SciPy_W1_D3B_Continuous_Metrics_and_t-tests.ipynb`
-
-| Question | Topic |
-|----------|-------|
-| Q1 | Welch's t-test on lognormal session duration — histogram overlay, Cohen's d, Welch's vs Student's justification |
-| Q2 | Variance kills power — low vs high variance scenarios, vectorised 1,000-trial simulation, sample size calculation |
-| Q3 | Paired t-test — before/after scatter plot, difference distribution, paired vs independent comparison |
-| Q4 | CUPED variance reduction — theta calculation, adjusted metrics, 40% variance reduction |
-| Q5 | Test selection challenge — proportion z-test, Mann-Whitney U, paired t-test, Welch's with winsorization |
-
-*Day 3C — Sample Size, Power & Experiment Design*
-`SciPy_W1_D3C_Sample_Size__Power_and_Experiment_Design.ipynb`
-
-| Question | Topic |
-|----------|-------|
-| Q1 | Sample size calculator — proportions and continuous metrics, power curves |
-| Q2 | MDE sensitivity — n vs MDE table, annotated chart, PM interpretation |
-| Q3 | The peeking problem — 1,000-experiment simulation, cumulative false positive rate, business impact |
-| Q4 | Runtime estimation — weekly traffic variation, cumulative sample size plot, minimum 7-day rule |
-| Q5 | Full experiment design brief — hypotheses, metrics, sample size, runtime, invalidation risks |
-
-*Day 3D — Non-Parametric Tests*
-`SciPy_W1_D3D_Non-Parametric_Tests.ipynb`
-
-| Question | Topic |
-|----------|-------|
-| Q1 | Mann-Whitney U on revenue data — log-scaled boxplot, rank-biserial effect size |
-| Q2 | Wilcoxon signed-rank on satisfaction scores — score transition heatmap, paired vs independent comparison |
-| Q3 | Permutation test from scratch — 10,000 shuffles, null distribution, two-tailed p-value, axvspan shading |
-| Q4 | Dunn's post-hoc bridge — Kruskal-Wallis confirmation, Bonferroni correction, p-value heatmap |
-| Q5 | Parametric vs non-parametric decision framework — 5 real-world scenarios |
-
-*Day 3E — Multiple Testing, Advanced Topics & Pitfalls*
-`SciPy_W1_D3E_Multiple_Testing__Advanced_Topics_and_Pitfalls.ipynb`
-
-| Question | Topic |
-|----------|-------|
-| Q1 | Multiple testing correction — Bonferroni vs Benjamini-Hochberg FDR, comparison chart |
-| Q2 | Simpson's Paradox — synthetic A/B dataset, segment composition stacked bar, plain-English explanation |
-| Q3 | Novelty effect detection — 21-day simulation, week-1 vs week-3 t-tests, duration decision |
-| Q4 | Bayesian A/B testing — Beta posteriors, P(treatment > control) via Monte Carlo, credible interval shading |
-| Q5 | Full A/B testing audit — peeking simulation, SRM chi-squared, multiple testing correction, structured audit report |
-| Q6 | Chi-squared test — 3×2 contingency table, Cramér's V effect size, observed vs expected heatmap, multi-segment Bonferroni |
-
-**Key concepts covered:** Type I/II errors · statistical power · effect size · CUPED · variance reduction · non-parametric tests · Bayesian A/B · multiple testing · Simpson's Paradox · chi-squared · peeking · SRM · experiment design
-
-**Skills demonstrated:** `proportions_ztest` · `ttest_ind` · `ttest_rel` · `mannwhitneyu` · `chi2_contingency` · `proportion_effectsize` · `TTestIndPower` · `multipletests` · `stats.beta` · permutation testing · Bonferroni · BH FDR · vectorised simulation · winsorization
-
----
-
-**Day 4 — ANOVA & Beyond: Parametric and Non-Parametric 3+ Group Tests**
-
-Split across three notebooks progressing from one-way ANOVA to repeated measures and non-parametric alternatives.
-
-*Day 4A — One-Way ANOVA, Post-Hoc Tests & Assumptions*
-`SciPy_W1_D4A_ANOVA_PostHoc_Assumptions.ipynb`
-
-| Question | Topic |
-|----------|-------|
-| Q1 | One-way ANOVA — F-statistic, p-value, group visualization |
-| Q2 | Tukey HSD post-hoc — all pairwise comparisons, confidence intervals |
-| Q3 | ANOVA assumptions — Shapiro-Wilk per group, Levene's test, violation consequences |
-| Q4 | ANCOVA — covariate control, p-value comparison before and after adjustment |
-| Q5 | ANCOVA as regression — OLS equivalence proof with `np.isclose()`, GLM explanation |
-| Q6 | Two-way ANOVA — interaction effects, Type II table, interaction plot, mobile vs desktop business interpretation |
-
-*Day 4B — ANCOVA, Two-Way ANOVA & Repeated Measures*
-`SciPy_W1_D4B_ANCOVA_TwoWay_RepeatedMeasures.ipynb`
-
-| Question | Topic |
-|----------|-------|
-| Q1 | ANCOVA with correlated covariate — "Fairness Filter" framing, residuals vs fitted diagnostics |
-| Q2 | Two-way ANOVA — layout × device interaction, pointplot, mobile/desktop gap quantification |
-| Q3 | Repeated measures ANOVA — AnovaRM, pairwise Bonferroni post-hoc, within-subject power explanation |
-| Q4 | Unified GLM — ANOVA = ANCOVA = OLS regression demonstrated, coefficient interpretation |
-| Q5 | Reusable `assumption_check()` function — Shapiro-Wilk + Levene, Day 4A/4B vs 4C recommendation |
-
-*Day 4C — Non-Parametric Tests for 3+ Groups*
-`SciPy_W1_D4C_NonParametric_3Plus_Groups.ipynb`
-
-| Question | Topic |
-|----------|-------|
-| Q1 | Kruskal-Wallis — KDE overlay with median lines, H-statistic, effect size |
-| Q2 | Dunn's post-hoc — Bonferroni correction, adjusted p-value heatmap |
-| Q3 | Friedman test — pairwise Wilcoxon with Bonferroni, median line chart with IQR bars |
-| Q4 | Parametric vs non-parametric side by side — outlier contamination experiment, robustness nuance |
-| Q5 | Full decision framework — 4 datasets, assumption checks, test selection, post-hoc, `pingouin` |
-
-**Skills demonstrated:** `f_oneway` · `pairwise_tukeyhsd` · `AnovaRM` · `anova_lm` · `smf.ols` · `stats.kruskal` · `stats.friedmanchisquare` · `posthoc_dunn` · `pingouin` · interaction terms · covariate adjustment · GLM unification
-
----
-
-**Day 5 — Correlation, Linear & Logistic Regression**
-`SciPy_W1_D5_Correlation_and_Regression.ipynb`
-
-| Question | Topic |
-|----------|-------|
-| Q1 | Pearson vs Spearman correlation — full matrix, strongest/weakest identification |
-| Q2 | Simple linear regression — slope interpretation, R², predictions |
-| Q3 | Multiple regression — OLS with 3 predictors, significance, Adjusted R² |
-| Q4 | Regression diagnostics — Shapiro-Wilk on residuals, residuals vs fitted, Cook's Distance |
-| Q5 | Logistic regression preview — binary outcome, odds ratios, pseudo R², business interpretation |
-| Q6 ⭐ | Portfolio extension — DX/RX patient conversion model (see Featured Project above) |
-
-**Skills demonstrated:** `stats.pearsonr` · `stats.spearmanr` · `stats.linregress` · `smf.ols` · `smf.logit` · odds ratios · Cook's Distance · confusion matrix · AUC-ROC · point-biserial correlation
-
----
-
-**Day 6 — Time Series Analysis**
-`SciPy_W1_D6_Time_Series_Analysis.ipynb`
-
-| Question | Topic |
-|----------|-------|
-| Q1 | Build and decompose — Gaussian flu spike, seasonal_decompose, component magnitude summary |
-| Q2 | Stationarity testing — ADF test, first-order differencing, before/after stationarity plot |
-| Q3 | Autocorrelation analysis — ACF/PACF on stationary series, lag threshold, forecasting horizon |
-| Q4 | Seasonality deep dive — daily series, weekly + annual patterns, dual bar chart |
-| Q5 | Rolling statistics and anomaly detection — 7-day rolling band, 2σ threshold, highlighted anomaly plot |
-
-**Skills demonstrated:** `seasonal_decompose` · `adfuller` · `acf` · `pacf` · `plot_acf` · `plot_pacf` · rolling statistics · anomaly detection · time series visualisation
-
----
-
-**Day 7 — Monte Carlo Simulation**
-`SciPy_W1_D7_Monte_Carlo_Simulation.ipynb`
-
-| Question | Topic |
-|----------|-------|
-| Q1 | Estimate π — 1M point simulation, convergence table at 1k/10k/100k/1M, 1/√n convergence commentary |
-| Q2 | Revenue projection — 50,000 simulations, subscriber compounding loop, downside/upside percentiles, distribution histogram |
-| Q3 | A/B test power simulation — empirical power at 6 sample sizes using `chi2_contingency`, reusable function |
-| Q4 | Bootstrap confidence intervals — mean, median, 90th percentile CIs, tail instability explanation |
-| Q5 | Risk simulation — 3D array simulation `(N, days, articles)`, daily views and RPM revenue, bad-day 10th percentile |
-
-**Skills demonstrated:** `np.random` · vectorised 3D simulation · bootstrap resampling · `chi2_contingency` · `stats.beta` · Monte Carlo convergence · revenue modelling · risk quantification · uncertainty quantification
-
----
-
-#### Week 2 — Practice on Real Data ✅
-
-| Day | Topic | Dataset |
-|-----|-------|---------|
-| W2D1 | Distributions practice | Heart Disease UCI (Kaggle) |
-| W2D2 | Sampling & confidence intervals | News Category Dataset (Kaggle) |
-| W2D3 | A/B testing full pipeline | A/B Testing Dataset (Kaggle) |
-| W2D4 | ANOVA & ANCOVA | Student Performance (Kaggle) |
-| W2D5 | Regression end-to-end | News articles dataset |
-| W2D6 | Time series — traffic & seasonality | Web Traffic Dataset (Kaggle) |
-| W2D7 | Monte Carlo capstone ⭐ | Simulated digital health & media business scenarios |
-
----
-
-**Day 7 — Monte Carlo Capstone ⭐**
-`SciPy_W2_D7_Monte_Carlo_Capstone.ipynb`
-
-End-to-end simulation project integrating power analysis, revenue modelling, permutation testing, sensitivity analysis, and a reusable campaign evaluation function — applied to synthetic digital health and media subscription scenarios.
-
-| Question | Scenario | Key Concepts |
-|----------|----------|-------------|
-| Q1 | A/B test power via Monte Carlo | 2D binomial matrix simulation across 6 sample sizes · empirical vs theoretical power curves · 80%/90% thresholds · MDE sensitivity comparison (1.0pp vs 0.5pp) |
-| Q2 | Revenue simulation with uncertainty | Stochastic 12-month subscriber compounding · fan chart (100 random paths + median) · 5th–95th percentile bands · P(>200k) probability horizon analysis |
-| Q3 | Permutation test vs parametric | Welch's t-test · Mann-Whitney U · 10,000-permutation null distribution · two-tailed empirical p-value · test trust hierarchy for skewed data |
-| Q4 | Sensitivity (tornado) analysis | ±20% one-at-a-time input variation · revenue swing per driver · horizontal tornado chart · business leverage ranking |
-| Q5 ⭐ | Campaign simulator function | Fully documented `simulate_campaign()` — lift sampling distribution · power curve annotation · revenue impact distribution · P(profitable) · break-even rate · dual scenario test (health booking + subscription) |
-
-**Skills demonstrated:** `np.random.binomial` (2D matrix) · `NormalIndPower` · `proportion_effectsize` · fan chart · tornado chart · vectorised permutation test · `scipy.stats` · `statsmodels` · production docstrings · multi-panel dashboard layout
-
----
-
-### 🤖 scikit-learn — 30-Day Bootcamp 🔄 In Progress
-**`scikit-learn/`**
-
-| Week | Focus |
-|------|-------|
-| 1 | sklearn API, train/test split, cross-validation, linear & logistic regression |
-| 2 | Decision trees, random forests, SVMs, gradient boosting |
-| 3 | Clustering, PCA, feature engineering, pipelines |
-| 4 | End-to-end projects — digital health conversion model, media engagement predictor |
+Real datasets (IBM HR Attrition, Ames House Prices, BBC News, Credit Card Fraud) + synthetic MedPulse/HealthLine projects culminating in the D29 DX/RX final model and D30 capstone.
 
 ---
 
@@ -346,9 +111,8 @@ End-to-end simulation project integrating power analysis, revenue modelling, per
 | **Languages** | Python, SQL (7+ years) |
 | **Data manipulation** | pandas, NumPy |
 | **Statistics** | SciPy, statsmodels, pingouin |
-| **Machine Learning** | scikit-learn *(in progress)* |
+| **Machine Learning** | scikit-learn, XGBoost, LightGBM, SHAP |
 | **Workflow** | VS Code, Jupyter Notebooks, GitHub |
-| **Coming soon** | dbt, XGBoost, LightGBM |
 
 ---
 
@@ -374,4 +138,4 @@ If you are working on interesting problems in health, media, or consumer technol
 
 ---
 
-*Last updated: June 2026 | SciPy bootcamp complete ✅ — scikit-learn 30-day bootcamp in progress 🔄*
+*Last updated: July 2026 | SciPy complete ✅ · scikit-learn W1 complete ✅ (14/30) · W2 in progress 🔄*
