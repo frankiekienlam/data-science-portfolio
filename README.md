@@ -32,7 +32,7 @@ data-science-portfolio/
 ├── pandas/          # 10-Day Pandas Bootcamp ✅
 ├── numpy/           # 5-Day NumPy Bootcamp ✅
 ├── scipy/           # 14-Day SciPy Statistics Bootcamp ✅
-└── scikit-learn/    # 30-Day scikit-learn Bootcamp 🔄 W1 Complete (14/30)
+└── scikit-learn/    # 30-Day scikit-learn Bootcamp 🔄 W2 In Progress (19/30)
 ```
 
 ---
@@ -96,11 +96,21 @@ Applied ML using synthetic **MedPulse** (digital health) and **HealthLine** (med
 | 13 | Imbalanced Classes — SMOTE, class_weight, threshold tuning, clinical scenario framing |
 | 14 | Model Selection & Bias-Variance — polynomial demo, learning curves, 5-model comparison |
 
-**Skills:** `Pipeline` · `ColumnTransformer` · `GridSearchCV` · `XGBClassifier` · `LGBMClassifier` · SHAP · SMOTE · `cross_validate` · `learning_curve` · `validation_curve` · `joblib`
+**W1 Skills:** `Pipeline` · `ColumnTransformer` · `GridSearchCV` · `XGBClassifier` · `LGBMClassifier` · SHAP · SMOTE · `cross_validate` · `learning_curve` · `validation_curve` · `joblib`
 
-**Week 2 — Applied Projects 🔄 Coming Next (Days 15–30)**
+**W2 Skills (so far):** `SMOTENC` · `ImbPipeline` · `GroupKFold` · `TimeSeriesSplit` · nested CV · `permutation_importance` · `HistGradientBoostingRegressor` · `RidgeCV` · `LassoCV` · `average_precision_score` · residual diagnostics · QQ plots
+
+**Week 2 — Applied Projects 🔄 In Progress (Days 15–30)**
 
 Real datasets (IBM HR Attrition, Ames House Prices, BBC News, Credit Card Fraud) + synthetic MedPulse/HealthLine projects culminating in the D29 DX/RX final model and D30 capstone.
+
+| Day | Topic |
+|-----|-------|
+| 18 | Imbalanced Classes — SMOTE, SMOTENC, ImbPipeline, threshold optimisation, cost-sensitive framing |
+| 19 | Full Preprocessing Pipeline — ColumnTransformer, custom transformers, KNN vs median imputation, feature engineering |
+| 20 | Cross-Validation Deep Dive — GroupKFold, TimeSeriesSplit, nested CV, user-level leakage detection |
+| 21 | Model Comparison — 5-model CV, ROC/PR curves, discrete probability outputs, SMOTENC for mixed-type data |
+| 22 | Regression — Ridge/Lasso/GBR on house prices, residual analysis, QQ plots, permutation importance |
 
 ---
 
@@ -138,4 +148,4 @@ If you are working on interesting problems in health, media, or consumer technol
 
 ---
 
-*Last updated: July 2026 | SciPy complete ✅ · scikit-learn W1 complete ✅ (14/30) · W2 in progress 🔄*
+*Last updated: July 2026 | SciPy complete ✅ · scikit-learn W1 complete ✅ (14/30) · W2 in progress 🔄 (19/30)*
