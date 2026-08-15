@@ -33,22 +33,21 @@ data-science-portfolio/
 ├── numpy/           # 5-Day NumPy Bootcamp ✅
 ├── scipy/           # 14-Day SciPy Statistics Bootcamp ✅
 ├── scikit-learn/    # 30-Day scikit-learn Bootcamp ✅ Complete
-└── production/      # Production ML Pipeline — Real-World Datasets
+├── production/      # Production ML Pipeline — Real-World Datasets
+└── advanced-ds/     # 30-Day Advanced DS Curriculum 🔄 In Progress
 ```
 
 ---
 
 ## 🚀 Production Pipeline — Real-World Datasets
 
-> A production-grade binary classification pipeline built from scratch, tested across four real-world datasets of increasing complexity.
-
 **`classification_LGBM_pipeline.py`** — a fully reusable, dataset-agnostic ML pipeline featuring:
 
 - **PyOD Outlier Ensemble** — IForest + KNN/HBOS + LOF with auto-bypass at 500K+ rows
-- **MCAR Diagnostic** — KS-test-based missingness detection with automatic `_IS_MISSING` indicator flags
-- **SMOTE / SMOTENC Auto-Selection** — detects categorical features and selects correct oversampling strategy
+- **MCAR Diagnostic** — KS-test-based missingness detection with automatic `_IS_MISSING` indicator flags via FeatureUnion two-track architecture
+- **SMOTE / SMOTENC Auto-Selection** — detects categorical features and selects correct oversampling strategy automatically
 - **Optuna Hyperparameter Tuning** — Bayesian search with dynamic `min_child_samples`, configurable metric (`auprc`, `roc_auc`, `recall`)
-- **Auto-Calibration** — isotonic / sigmoid / none selected based on class ratio
+- **Auto-Calibration** — isotonic / sigmoid / none selected based on class ratio with auto-override at extreme imbalance
 - **TunedThresholdClassifierCV** — business-constraint recall floor with precision floor guard
 - **SHAP Explainability** — beeswarm, bar, waterfall, dependency plots with human-readable feature names
 - **Pipeline Telemetry** — per-step wall time, RAM delta, peak memory via `psutil`
@@ -60,7 +59,6 @@ data-science-portfolio/
 | **Telco Churn** | 7K | 0.869 | 59% | 66% | 0.041 ✅ | Contract × Tenure |
 | **Credit Card Fraud** | 284K | 0.966 | 88% | 29% | — | V14 × V4 |
 | **Lending Club Default** | 1.3M | 0.766 | 19% | 79% | 0.026 ✅ | Debt settlement × Sub-grade |
-| **CMS GLP-1 Market Intel** | 30M | — | — | — | — | Market intelligence analysis |
 
 ---
 
@@ -75,6 +73,14 @@ First built in the SciPy bootcamp using `statsmodels` logistic regression, then 
 - **D30** — Capstone: joint MedPulse × HealthLine engagement predictor, full production pipeline with nested CV, calibration audit, and PR curve threshold tuning
 
 All data is fully synthetic. See disclaimer above.
+
+---
+
+## 🔬 Advanced DS Curriculum — In Progress
+
+I am currently working through a 30-day advanced curriculum covering topics beyond supervised classification — going deeper into the theory and practice of the full data science toolkit applied to real-world digital consumer platform datasets.
+
+The curriculum spans unsupervised learning (clustering, dimensionality reduction, outlier detection), ensemble architectures (bagging, boosting, stacking), regression, market basket analysis, recommendation systems, and causal inference. Each block builds on the previous — outputs from clustering feed regression and causal inference; market basket rules seed the recommendation engine. The final week delivers two production-grade pipelines (`clustering_pipeline.py` and `recommendation_pipeline.py`) modeled on the classification pipeline above.
 
 ---
 
@@ -185,4 +191,4 @@ If you are working on interesting problems in health, media, or consumer technol
 
 ---
 
-*Last updated: August 2026 | pandas ✅ · NumPy ✅ · SciPy ✅ · scikit-learn ✅ (30/30) · Production Pipeline ✅*
+*Last updated: August 2026 | pandas ✅ · NumPy ✅ · SciPy ✅ · scikit-learn ✅ (30/30) · Production Pipeline ✅ · Advanced DS 🔄*
