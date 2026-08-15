@@ -1,13 +1,13 @@
 # 📊 Data Science Portfolio
 
 **Frankie Lam** | Data Analyst → Data Scientist  
-📍 New York, NY & Bay Area, CA | [LinkedIn](https://www.linkedin.com/in/frankielgk/) | [Email](mailto:frankie_lam@outlook.com)
+📍 New York, NY | [LinkedIn](https://www.linkedin.com/in/frankielgk/) | [Email](mailto:frankie_lam@outlook.com)
 
 ---
 
 > ⚠️ **Important Disclaimer**
 >
-> All datasets, scenarios, company names, metrics, and business contexts used in this portfolio are **entirely synthetic and independently constructed**. They were simulated from scratch using publicly available research, open-source datasets (Kaggle, UCI), and domain knowledge derived from publicly documented industry practices.
+> All datasets, scenarios, company names, metrics, and business contexts used in this portfolio are **entirely synthetic and independently constructed**. They were simulated from scratch using publicly available research, open-source datasets (Kaggle, UCI, CMS), and domain knowledge derived from publicly documented industry practices.
 >
 > **No proprietary data, confidential business information, internal systems, unreleased metrics, or trade secrets from any current or former employer — including WebMD or The New York Times — were used, referenced, or reproduced in any form.**
 >
@@ -32,8 +32,35 @@ data-science-portfolio/
 ├── pandas/          # 10-Day Pandas Bootcamp ✅
 ├── numpy/           # 5-Day NumPy Bootcamp ✅
 ├── scipy/           # 14-Day SciPy Statistics Bootcamp ✅
-└── scikit-learn/    # 30-Day scikit-learn Bootcamp 🔄 W2 In Progress (19/30)
+├── scikit-learn/    # 30-Day scikit-learn Bootcamp ✅ Complete
+└── production/      # Production ML Pipeline — Real-World Datasets
 ```
+
+---
+
+## 🚀 Production Pipeline — Real-World Datasets
+
+> A production-grade binary classification pipeline built from scratch, tested across four real-world datasets of increasing complexity.
+
+**`classification_LGBM_pipeline.py`** — a fully reusable, dataset-agnostic ML pipeline featuring:
+
+- **PyOD Outlier Ensemble** — IForest + KNN/HBOS + LOF with auto-bypass at 500K+ rows
+- **MCAR Diagnostic** — KS-test-based missingness detection with automatic `_IS_MISSING` indicator flags
+- **SMOTE / SMOTENC Auto-Selection** — detects categorical features and selects correct oversampling strategy
+- **Optuna Hyperparameter Tuning** — Bayesian search with dynamic `min_child_samples`, configurable metric (`auprc`, `roc_auc`, `recall`)
+- **Auto-Calibration** — isotonic / sigmoid / none selected based on class ratio
+- **TunedThresholdClassifierCV** — business-constraint recall floor with precision floor guard
+- **SHAP Explainability** — beeswarm, bar, waterfall, dependency plots with human-readable feature names
+- **Pipeline Telemetry** — per-step wall time, RAM delta, peak memory via `psutil`
+
+### Real-World Dataset Results
+
+| Dataset | Rows | ROC-AUC | Recall | Precision | ECE | Key Signal |
+|---------|------|---------|--------|-----------|-----|------------|
+| **Telco Churn** | 7K | 0.869 | 59% | 66% | 0.041 ✅ | Contract × Tenure |
+| **Credit Card Fraud** | 284K | 0.966 | 88% | 29% | — | V14 × V4 |
+| **Lending Club Default** | 1.3M | 0.766 | 19% | 79% | 0.026 ✅ | Debt settlement × Sub-grade |
+| **CMS GLP-1 Market Intel** | 30M | — | — | — | — | Market intelligence analysis |
 
 ---
 
@@ -45,7 +72,7 @@ First built in the SciPy bootcamp using `statsmodels` logistic regression, then 
 
 - **D15** — Rebuilt with sklearn Pipeline, calibrated probabilities, revenue threshold curve
 - **D29** — Upgraded to XGBoost + SHAP, head-to-head vs baseline, optimal outreach threshold
-- **D30** — Capstone: joint MedPulse × HealthLine engagement predictor, full production pipeline
+- **D30** — Capstone: joint MedPulse × HealthLine engagement predictor, full production pipeline with nested CV, calibration audit, and PR curve threshold tuning
 
 All data is fully synthetic. See disclaimer above.
 
@@ -74,7 +101,7 @@ Applied statistics for digital health and media business problems.
 
 ---
 
-### 🤖 scikit-learn — 30-Day Bootcamp 🔄 W1 Complete
+### 🤖 scikit-learn — 30-Day Bootcamp ✅ Complete
 Applied ML using synthetic **MedPulse** (digital health) and **HealthLine** (media subscriptions) datasets throughout.
 
 **Week 1 — Core Algorithms ✅ (Days 1–14)**
@@ -96,21 +123,27 @@ Applied ML using synthetic **MedPulse** (digital health) and **HealthLine** (med
 | 13 | Imbalanced Classes — SMOTE, class_weight, threshold tuning, clinical scenario framing |
 | 14 | Model Selection & Bias-Variance — polynomial demo, learning curves, 5-model comparison |
 
-**W1 Skills:** `Pipeline` · `ColumnTransformer` · `GridSearchCV` · `XGBClassifier` · `LGBMClassifier` · SHAP · SMOTE · `cross_validate` · `learning_curve` · `validation_curve` · `joblib`
-
-**W2 Skills (so far):** `SMOTENC` · `ImbPipeline` · `GroupKFold` · `TimeSeriesSplit` · nested CV · `permutation_importance` · `HistGradientBoostingRegressor` · `RidgeCV` · `LassoCV` · `average_precision_score` · residual diagnostics · QQ plots
-
-**Week 2 — Applied Projects 🔄 In Progress (Days 15–30)**
+**Week 2 — Applied Projects ✅ (Days 15–30)**
 
 Real datasets (IBM HR Attrition, Ames House Prices, BBC News, Credit Card Fraud) + synthetic MedPulse/HealthLine projects culminating in the D29 DX/RX final model and D30 capstone.
 
 | Day | Topic |
 |-----|-------|
+| 15 | Digital Health Conversion Model — sklearn Pipeline, calibrated LR, revenue curve |
 | 18 | Imbalanced Classes — SMOTE, SMOTENC, ImbPipeline, threshold optimisation, cost-sensitive framing |
-| 19 | Full Preprocessing Pipeline — ColumnTransformer, custom transformers, KNN vs median imputation, feature engineering |
+| 19 | Full Preprocessing Pipeline — ColumnTransformer, custom transformers, KNN vs median imputation |
 | 20 | Cross-Validation Deep Dive — GroupKFold, TimeSeriesSplit, nested CV, user-level leakage detection |
-| 21 | Model Comparison — 5-model CV, ROC/PR curves, discrete probability outputs, SMOTENC for mixed-type data |
-| 22 | Regression — Ridge/Lasso/GBR on house prices, residual analysis, QQ plots, permutation importance |
+| 21 | Model Comparison — 5-model CV, ROC/PR curves, SMOTENC for mixed-type data |
+| 22 | Regression — Ridge/Lasso/GBR on Ames house prices, residual analysis, QQ plots |
+| 26 | Stroke Prediction — open practice, full pipeline, SHAP on clinical data |
+| 27 | News Popularity — high-cardinality features, regression framing, feature selection |
+| 28 | Patient Readmission — clinical imbalance, GroupKFold by patient, recall-constrained scoring |
+| 29 | DX/RX Final Model ⭐ — XGBoost + SHAP, nested CV, calibration curves, revenue impact |
+| 30 | Capstone: Engagement Predictor ⭐ — nested CV, 3-model comparison, waterfall, PR threshold tuning |
+
+**W1 Skills:** `Pipeline` · `ColumnTransformer` · `GridSearchCV` · `XGBClassifier` · `LGBMClassifier` · SHAP · SMOTE · `cross_validate` · `learning_curve` · `validation_curve` · `joblib`
+
+**W2 Skills:** `SMOTENC` · `ImbPipeline` · `GroupKFold` · `TimeSeriesSplit` · nested CV · `CalibratedClassifierCV` · `TunedThresholdClassifierCV` · `average_precision_score` · `brier_score_loss` · SHAP waterfall/dependency · residual diagnostics · QQ plots · revenue simulation
 
 ---
 
@@ -122,7 +155,10 @@ Real datasets (IBM HR Attrition, Ames House Prices, BBC News, Credit Card Fraud)
 | **Data manipulation** | pandas, NumPy |
 | **Statistics** | SciPy, statsmodels, pingouin |
 | **Machine Learning** | scikit-learn, XGBoost, LightGBM, SHAP |
-| **Workflow** | VS Code, Jupyter Notebooks, GitHub |
+| **Imbalanced Learning** | imbalanced-learn, SMOTE, SMOTENC, PyOD |
+| **Hyperparameter Tuning** | Optuna (Bayesian), GridSearchCV, RandomizedSearchCV |
+| **Workflow** | VS Code, Jupyter Notebooks, Google Colab, GitHub |
+| **Cloud** | Google Drive + Colab pipeline (CPU + T4 GPU) |
 
 ---
 
@@ -145,7 +181,8 @@ If you are working on interesting problems in health, media, or consumer technol
 
 - **LinkedIn:** [linkedin.com/in/frankielgk/](https://www.linkedin.com/in/frankielgk/)
 - **Email:** frankie_lam@outlook.com
+- **Kaggle:** [kaggle.com/frankielgk](https://www.kaggle.com/frankielgk)
 
 ---
 
-*Last updated: July 2026 | SciPy complete ✅ · scikit-learn W1 complete ✅ (14/30) · W2 in progress 🔄 (19/30)*
+*Last updated: August 2026 | pandas ✅ · NumPy ✅ · SciPy ✅ · scikit-learn ✅ (30/30) · Production Pipeline ✅*
